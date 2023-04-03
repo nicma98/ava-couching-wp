@@ -2,17 +2,12 @@
 
 /**
  * Registrar todas los menús y submenús de mi plugin
- * 
- * @package     Motos&Servitecas_Web
- */
-
-/**
  * Agrega todos los menús y submenus a utilizar en el plugin
  * donde los métodos add_menu_page() y add_submenu_page()
  * tienen que ser llamados junto con el gancho
  * de acción 'admin_menu'
  * 
- * @package     Motos&Servitecas_Web
+ * @package     Dashboard-Ava
  * 
  * @property array $menus
  * @property array $submenus

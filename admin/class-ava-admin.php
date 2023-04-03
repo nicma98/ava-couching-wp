@@ -122,10 +122,10 @@ class MYS_Admin {
     public function add_menu()
     {
         $this->menu_admin->add_menu_page(
-            __('Servicios MYS','servicios-mys'),
-            __('Servicios MYS','servicios-mys'),
+            __("Dashboard KPI's","dashboard-kpis"),
+            __("Dashboard KPI's","dashboard-kpis"),
             'manage_options',
-            'servicios-mys',
+            'dashboard-kpis',
             [$this, 'control_display_menu'],
             '',
             15
@@ -148,11 +148,11 @@ class MYS_Admin {
     public function add_submenu_contacto_clientes()
     {
         $this->menu_admin->add_submenu_page(
-            'servicios-mys',
-            __('Contacto clientes','servicios-mys'),
-            __('Contacto clientes','servicios-mys'),
+            'dashboard-kpis',
+            __('Listado de indicadores','list-kpis'),
+            __('Listado de indicadores','list-kpis'),
             'manage_options',
-            'clientes-mys',
+            'list-kpis',
             [$this, 'control_display_submenu_contacto_clientes'],
         );
 

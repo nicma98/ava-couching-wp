@@ -139,7 +139,7 @@ class MYS_Admin {
      */
     public function control_display_menu()
     {
-        require_once DASHBOARD_AVA_DIR . 'admin/partials/mys-admin-display.php';
+        require_once DASHBOARD_AVA_DIR . 'admin/partials/ava-admin-display.php';
     }
 
     /**
@@ -164,15 +164,15 @@ class MYS_Admin {
      */
     public function control_display_submenu_contacto_clientes()
     {
-        require_once DASHBOARD_AVA_DIR . 'admin/partials/mys-admin-display-clientes.php';
+        require_once DASHBOARD_AVA_DIR . 'admin/partials/ava-admin-display-list-kpis.php';
     }
 
     /**
      * 
      */
-    public function get_list_clientes()
+    public function get_list_kpis()
     {
-        return $this->crud_db->get_clientes();
+        return $this->crud_db->get_list_kpis();
     }
     
 }

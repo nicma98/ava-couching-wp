@@ -49,7 +49,7 @@ class MYS_CRUD_DB
     /**
      * 
      */
-    public function get_clientes()
+    public function get_list_kpis()
     {
 
         $sql = "SELECT * FROM " . DASHBOARD_AVA_TABLE . ";";

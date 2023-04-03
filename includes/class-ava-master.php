@@ -1,7 +1,7 @@
 <?php
-require_once 'class-mys-ajax.php';
-require_once 'class-mys-cargador.php';
-require_once 'class-mys-menus.php';
+require_once 'class-ava-ajax.php';
+require_once 'class-ava-cargador.php';
+require_once 'class-ava-menus.php';
 
 /**
  * Clase master que incluye otras clases auxiliares

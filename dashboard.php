@@ -35,9 +35,9 @@ register_activation_hook( __FILE__, 'dashboard_ava_activate' );
 /**
  * Código que se ejecuta en la desactivación del plugin
  */
-function servicios_mys_deactivate() {
+function dashboard_ava_deactivate() {
     require_once DASHBOARD_AVA_DIR . 'includes/class-ava-deactivator.php';
-	MYS_Deactivator::deactivate();
+	AVA_Deactivator::deactivate();
 }
 register_deactivation_hook( __FILE__, 'dashboard_ava_deactivate' );
  

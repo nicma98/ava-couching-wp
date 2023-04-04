@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Dashboard AVA COUCHING SAS BIC
+ * Plugin Name:     Dashboard AVA
  * Plugin URI:
  * Description:     Plugin complementario para dashboard de AVA COUCHING SAS BIC
  * Version:         1.0.0
@@ -19,7 +19,7 @@ define( 'DASHBOARD_AVA_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DASHBOARD_AVA_PLUGIN_FILE', __FILE__ );
 define( 'DASHBOARD_AVA_PLUGIN_URL', plugins_url() . '/dashboard' );
 define( 'DASHBOARD_AVA_VERSION', '1.0.0' );
-define( 'DASHBOARD_AVA_TABLE', "{$wpdb->prefix}dashboard_ava_kpis" );
+define( 'DASHBOARD_AVA_TABLE', "{$wpdb->prefix}ava_kpis" );
 define( 'DASHBOARD_AVA_TABLE_VALUES', "{$wpdb->prefix}ava_kpis_values" );
 define( 'DASHBOARD_AVA_TEXT_DOMAIN', 'dashboard-ava' );
 
@@ -28,8 +28,7 @@ define( 'DASHBOARD_AVA_TEXT_DOMAIN', 'dashboard-ava' );
  */
 function dashboard_ava_activate() {
     require_once DASHBOARD_AVA_DIR . 'includes/class-ava-activator.php';
-	AVA_Activator::activate_kpis();
-    AVA_Activator::activate_values();
+	AVA_Activator::activate();
 }
 register_activation_hook( __FILE__, 'dashboard_ava_activate' );
 

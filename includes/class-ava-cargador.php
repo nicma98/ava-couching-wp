@@ -4,7 +4,7 @@
  * 
  * @package     Dashboard-Ava
  */
-class MYS_Cargador
+class AVA_Cargador
 {
     public $plugin_mys_url;
     public $set_hooks;

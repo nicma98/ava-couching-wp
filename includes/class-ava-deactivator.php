@@ -16,7 +16,7 @@ class AVA_Deactivator
 	public static function deactivate_kpis() {
         global $wpdb;
 
-		$sql = "TRUNCATE TABLE " . DASHBOARD_AVA_TABLE . ";";
+		$sql = "DROP TABLE " . DASHBOARD_AVA_TABLE . ";";
 
 		$wpdb->query($sql);
 	}
@@ -24,7 +24,7 @@ class AVA_Deactivator
 	public static function deactivate_values() {
         global $wpdb;
 
-		$sql = "TRUNCATE TABLE " . DASHBOARD_AVA_TABLE_VALUES . ";";
+		$sql = "DROP TABLE " . DASHBOARD_AVA_TABLE_VALUES . ";";
 
 		$wpdb->query($sql);
 	}

@@ -78,7 +78,7 @@ class AVA_Menus {
     }
     
     /**
-	 * Añade un nuevo menú al array ($this->menus) a iterar para registrarlo en WorlññññdPress.
+	 * Añade un nuevo menú al array ($this->menus) a iterar para registrarlo en WordPress.
      * 
 	 * @param    string    $parentSlug       El nombre de slug para el menú principal (o el nombre de archivo de una página de administración de WordPress estándar).
 	 * @param    string    $pageTitle        El texto que se mostrará en las etiquetas de título de la página cuando se selecciona el menú.

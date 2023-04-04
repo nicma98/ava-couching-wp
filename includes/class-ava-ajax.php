@@ -33,11 +33,9 @@ class AVA_Ajax
         if ( isset( $_POST['action'] ) ){
 
             $id_kpi = $_POST['id_kpi'];
-            $year_kpi = $_POST['year_kpi'];
-            $per_kpi = $_POST['per_kpi'];
             $value_kpi = $_POST['value_kpi'];
 
-            $result = $this->crud_db->edit_value_kpi($id_kpi, $year_kpi, $per_kpi, $value_kpi);
+            $result = $this->crud_db->edit_value_kpi($id_kpi, $value_kpi);
 
             error_log($result);
 
@@ -77,10 +75,8 @@ class AVA_Ajax
         if ( isset( $_POST['action'] ) ){
 
             $id_kpi = $_POST['id_kpi'];
-            $year_kpi = $_POST['year_kpi'];
-            $per_kpi = $_POST['per_kpi'];
 
-            $result = $this->crud_db->delete_value_kpi($id_kpi, $year_kpi, $per_kpi);
+            $result = $this->crud_db->delete_value_kpi($id_kpi);
 
             error_log($result);
 

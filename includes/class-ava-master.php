@@ -102,10 +102,6 @@ class AVA_Master
     {
         $this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_scripts' );
         $this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_styles' );
-        $this->class_cargador->add_list_action( 'woocommerce_before_single_product_summary', $this->class_public, 'mys_services_contacto_clientes_form', 45);
-        $this->class_cargador->add_list_action( 'woocommerce_before_single_product', $this->class_public, 'mys_services_get_referencia', 0);
-        $this->class_cargador->add_list_action( 'woocommerce_before_shop_loop_item_title', $this->class_public, 'mys_services_get_referencia', 0);
-        $this->class_cargador->add_list_action( 'wp_ajax_clientes_encargo', $this->class_ajax, 'post_contacto_clientes_productos');
     }
 
     /**

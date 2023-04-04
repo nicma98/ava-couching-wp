@@ -20,6 +20,7 @@ define( 'DASHBOARD_AVA_PLUGIN_FILE', __FILE__ );
 define( 'DASHBOARD_AVA_PLUGIN_URL', plugins_url() . '/dashboard' );
 define( 'DASHBOARD_AVA_VERSION', '1.0.0' );
 define( 'DASHBOARD_AVA_TABLE', "{$wpdb->prefix}dashboard_ava_kpis" );
+define( 'DASHBOARD_AVA_TABLE_VALUES', "{$wpdb->prefix}ava_kpis_values" );
 define( 'DASHBOARD_AVA_TEXT_DOMAIN', 'dashboard-ava' );
 
 /**
@@ -27,7 +28,8 @@ define( 'DASHBOARD_AVA_TEXT_DOMAIN', 'dashboard-ava' );
  */
 function dashboard_ava_activate() {
     require_once DASHBOARD_AVA_DIR . 'includes/class-ava-activator.php';
-	AVA_Activator::activate();
+	AVA_Activator::activate_kpis();
+    AVA_Activator::activate_values();
 }
 register_activation_hook( __FILE__, 'dashboard_ava_activate' );
 
@@ -37,7 +39,8 @@ register_activation_hook( __FILE__, 'dashboard_ava_activate' );
  */
 function dashboard_ava_deactivate() {
     require_once DASHBOARD_AVA_DIR . 'includes/class-ava-deactivator.php';
-	AVA_Deactivator::deactivate();
+	AVA_Deactivator::deactivate_kpis();
+    AVA_Deactivator::deactivate_values();
 }
 register_deactivation_hook( __FILE__, 'dashboard_ava_deactivate' );
  

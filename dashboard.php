@@ -29,6 +29,7 @@ define( 'DASHBOARD_AVA_TEXT_DOMAIN', 'dashboard-ava' );
 function dashboard_ava_activate() {
     require_once DASHBOARD_AVA_DIR . 'includes/class-ava-activator.php';
 	AVA_Activator::activate();
+    AVA_Activator::create_kpis();
 }
 register_activation_hook( __FILE__, 'dashboard_ava_activate' );
 

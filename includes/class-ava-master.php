@@ -79,7 +79,7 @@ class AVA_Master
     {
         $this->class_cargador =     new AVA_Cargador();
         $this->class_admin =        new AVA_Admin('dashboard-ava', DASHBOARD_AVA_VERSION);
-        $this->class_public =       new AVA_Public('dashboard-ava', DASHBOARD_AVA_VERSION);
+        //$this->class_public =       new AVA_Public('dashboard-ava', DASHBOARD_AVA_VERSION);
         $this->class_ajax =         new AVA_Ajax();
     }
 
@@ -100,8 +100,8 @@ class AVA_Master
      */
     private function definir_public_hooks()
     {
-        $this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_scripts' );
-        $this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_styles' );
+        //$this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_scripts' );
+        //$this->class_cargador->add_list_action( 'wp_enqueue_scripts', $this->class_public, 'enqueue_styles' );
     }
 
     /**

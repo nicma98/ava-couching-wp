@@ -24,6 +24,25 @@ class AVA_Ajax
     }
 
     /**
+     * Funcion para solicitar un indicador
+     */
+    public function get_kpi()
+    {
+        check_ajax_referer('ava_token','token');
+
+        if ( isset( $_POST['action'] ) ){
+
+            $id_kpi = $_POST['id_kpi'];
+
+            $result = $this->crud_db->get_kpi($id_kpi);
+
+            error_log($result);
+
+            wp_die();
+        }
+    }
+
+    /**
      * Funcion para editar valor de un indicador
      */
     public function edit_value_kpi()

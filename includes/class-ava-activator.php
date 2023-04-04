@@ -39,9 +39,11 @@ class AVA_Activator
 
 		$sql_insert = "INSERT INTO " . DASHBOARD_AVA_TABLE . " (key_kpi, name_kpi, comment_kpi) VALUES (";
 
-		$sql_3 = $sql_insert . "'fin_rentabilidad', 'Rentabilidad', 'Prueba del indicador');";
+		$sql_3 = $sql_insert . "'fin_rentabilidad', 'Rentabilidad', 'Prueba del indicador de rentabilidad');";
+		$sql_4 = $sql_insert . "'fin_rotacion', 'Rotación', 'Prueba del indicador de rotación.');";
 
 		$wpdb->query($sql_3);
+		$wpdb->query($sql_4);
 
 	}
 

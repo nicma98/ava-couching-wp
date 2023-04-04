@@ -92,7 +92,7 @@ class AVA_Master
         $this->class_cargador->add_list_action( 'admin_enqueue_scripts', $this->class_admin, 'enqueue_scripts' );
         $this->class_cargador->add_list_action( 'admin_menu', $this->class_admin, 'add_menu' );
         $this->class_cargador->add_list_action( 'admin_menu', $this->class_admin, 'add_submenu_contacto_clientes' );
-        $this->class_cargador->add_list_action( 'wp_ajax_delete_cliente', $this->class_ajax, 'post_conctacto_delete_cliente');
+        $this->class_cargador->add_list_action( 'wp_ajax_get_kpi', $this->class_ajax, 'get_kpi');
     }
 
     /**

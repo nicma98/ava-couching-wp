@@ -37,25 +37,11 @@ class AVA_Activator
 
 		$wpdb->query($sql_2);
 
-	}
+		$sql_insert = "INSERT INTO " . DASHBOARD_AVA_TABLE . " (key_kpi, name_kpi, comment_kpi) VALUES (";
 
-	/**
-	 * 
-	 */
-	public static function create_kpis(){
-		global $wpdb;
+		$sql_3 = $sql_insert . "'fin_rentabilidad', 'Rentabilidad', 'Prueba del indicador');";
 
-		$string_sql = "INSERT INTO " . DASHBOARD_AVA_TABLE . " (
-			key_kpi,
-			name_kpi,
-			comment_kpi, 
-		) VALUES (
-			'fin_rentabilidad',
-			'Rentabilidad',
-			'Prueba del indicador'
-		);";
-
-		$wpdb->query($string_sql);
+		$wpdb->query($sql_3);
 
 	}
 

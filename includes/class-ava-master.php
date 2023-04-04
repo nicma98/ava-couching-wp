@@ -8,7 +8,7 @@ require_once 'class-ava-menus.php';
  * 
  * @package     Motos&Servitecas_Web
  */
-class MYS_Master
+class AVA_Master
 {
     /**
      * Clase cargador para los hooks de Wordpress
@@ -77,10 +77,10 @@ class MYS_Master
      */
     private function cargar_instancias()
     {
-        $this->class_cargador =     new MYS_Cargador();
-        $this->class_admin =        new MYS_Admin('dashboard-ava',DASHBOARD_AVA_VERSION);
-        $this->class_public =       new MYS_Public('dashboard-ava',DASHBOARD_AVA_VERSION);
-        $this->class_ajax =         new MYS_Ajax();
+        $this->class_cargador =     new AVA_Cargador();
+        $this->class_admin =        new AVA_Admin('dashboard-ava', DASHBOARD_AVA_VERSION);
+        $this->class_public =       new AVA_Public('dashboard-ava', DASHBOARD_AVA_VERSION);
+        $this->class_ajax =         new AVA_Ajax();
     }
 
     /**

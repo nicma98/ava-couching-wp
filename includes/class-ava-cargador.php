@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * Clse para los Hooks del plugin.
  * 
  * @package     Dashboard-Ava
  */
@@ -11,7 +11,6 @@ class MYS_Cargador
 
     public function __construct()
     {
-        $this->plugin_mys_url = plugins_url() . '/mys_woocommerce_service/';
         $this->set_hooks = [];
     }
 

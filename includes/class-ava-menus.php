@@ -12,7 +12,7 @@
  * @property array $menus
  * @property array $submenus
  */
-class MYS_Menus {
+class AVA_Menus {
     
     /**
 	 * El array de menús a registrar en WordPress.

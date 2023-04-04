@@ -1,54 +1,30 @@
 <?php
 
 /**
- * La funcionalidad específica de administración del plugin.
- *
- * @link       http://misitioweb.com
- * @since      1.0.0
- *
- * @package    Beziercode_blank
- * @subpackage Beziercode_blank/admin
- */
-
-/**
- * Define el nombre del plugin, la versión y dos métodos para
- * Encolar la hoja de estilos específica de administración y JavaScript.
- * 
- * @since      1.0.0
- * @package    Beziercode-Blank
- * @subpackage Beziercode-Blank/admin
- * @author     Gilbert Rodríguez <email@example.com>
+ * Clase principal de funciones de administración.
  * 
  * @property string $plugin_name
  * @property string $version
  */
-class MYS_Admin {
+class AVA_Admin {
     
     /**
 	 * El identificador único de éste plugin
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name  El nombre o identificador único de éste plugin
 	 */
     private $plugin_name;
     
     /**
 	 * Versión actual del plugin
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version  La versión actual del plugin
 	 */
     private $version;
 
     /**
-     * 
+     * Clase para los menus del plugin
      */
     private $menu_admin;
 
     /**
-     * 
+     * CRUD para la base de datos de Wordpress
      */
     private $crud_db;
     
@@ -60,57 +36,33 @@ class MYS_Admin {
         
         $this->plugin_name = $plugin_name;
         $this->version = $version;  
-        $this->menu_admin = new MYS_Menus();
-        $this->crud_db = new MYS_CRUD_DB();
+        $this->menu_admin = new AVA_Menus();
+        $this->crud_db = new AVA_CRUD_DB();
         
     }
     
     /**
 	 * Registra los archivos de hojas de estilos del área de administración
-	 *
-	 * @since    1.0.0
-     * @access   public
 	 */
     public function enqueue_styles() {
         
-        /**
-         * Una instancia de esta clase debe pasar a la función run()
-         * definido en BC_Cargador como todos los ganchos se definen
-         * en esa clase particular.
-         *
-         * El BC_Cargador creará la relación
-         * entre los ganchos definidos y las funciones definidas en este
-         * clase.
-		 */
-		wp_enqueue_style( $this->plugin_name, DASHBOARD_AVA_PLUGIN_URL . '/admin/css/bc-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, DASHBOARD_AVA_PLUGIN_URL . '/admin/css/ava-admin.css', array(), $this->version, 'all' );
         
     }
     
     /**
 	 * Registra los archivos Javascript del área de administración
-	 *
-	 * @since    1.0.0
-     * @access   public
 	 */
     public function enqueue_scripts() {
         
-        /**
-         * Una instancia de esta clase debe pasar a la función run()
-         * definido en BC_Cargador como todos los ganchos se definen
-         * en esa clase particular.
-         *
-         * El BC_Cargador creará la relación
-         * entre los ganchos definidos y las funciones definidas en este
-         * clase.
-		 */
         wp_enqueue_editor();
-        wp_enqueue_script( $this->plugin_name, DASHBOARD_AVA_PLUGIN_URL . '/admin/js/bc-admin.js', ['jquery'], $this->version, true );
+        wp_enqueue_script( $this->plugin_name, DASHBOARD_AVA_PLUGIN_URL . '/admin/js/ava-admin.js', ['jquery'], $this->version, true );
         wp_localize_script(
             $this->plugin_name,
             'object_ajax',
             [
                 'url' => admin_url('admin-ajax.php'),
-                'token' => wp_create_nonce('mys_token')
+                'token' => wp_create_nonce('ava_token')
             ]
         );
         
@@ -135,7 +87,7 @@ class MYS_Admin {
     }
 
     /**
-     * Funcion para usar vista de pagina admin
+     * Funcion para usar vista de menu principal
      */
     public function control_display_menu()
     {
@@ -153,7 +105,7 @@ class MYS_Admin {
             __('Listado de indicadores','list-kpis'),
             'manage_options',
             'list-kpis',
-            [$this, 'control_display_submenu_contacto_clientes'],
+            [$this, 'control_display_submenu_listado_kpis'],
         );
 
         $this->menu_admin->run();
@@ -162,7 +114,7 @@ class MYS_Admin {
     /**
      * 
      */
-    public function control_display_submenu_contacto_clientes()
+    public function control_display_submenu_listado_kpis()
     {
         require_once DASHBOARD_AVA_DIR . 'admin/partials/ava-admin-display-list-kpis.php';
     }

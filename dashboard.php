@@ -50,7 +50,7 @@ require_once DASHBOARD_AVA_DIR . 'includes/class-ava-master.php';
  * Funcion para iniciar la clase master
  */
 function ava_run_master_class_plugin(){
-    $master = new MYS_Master();
+    $master = new AVA_Master();
     $master->init();
 }
 

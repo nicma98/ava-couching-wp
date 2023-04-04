@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 
+ * Clase para manejar el CRUD de la base de datos.
  * 
  * @package     Dashboard-Ava
  */
-class MYS_CRUD_DB
+class AVA_CRUD_DB
 {
     /**
      * 
@@ -74,5 +74,53 @@ class MYS_CRUD_DB
 
         return json_encode($response);
 
+    }
+
+    /**
+     * Funcion para agregar valor a un indocador.
+     */
+    public function add_value_kpi($id, $year, $per, $value)
+    {
+        $result = "INSERT INTO " . DASHBOARD_AVA_TABLE . " () VALUES (".$id.",".$year.",".$per.",".$value.")";
+
+        $response = [
+            'result' => $result
+        ];
+        
+        $this->db->flush();
+
+        return json_encode($response);
+    }
+
+    /**
+     * Funcion para editar valor de un indicador.
+     */
+    public function edit_value_kpi($id, $year, $per, $value)
+    {
+        $result = "UPDATE " . DASHBOARD_AVA_TABLE . "SET WHERE;";
+
+        $response = [
+            'result' => $result
+        ];
+        
+        $this->db->flush();
+
+        return json_encode($response);
+    }
+
+    /**
+     * Funcion para eliminar valor de un indicador.
+     */
+    public function delete_value_kpi($id, $year, $per)
+    {
+        $response = "DELETE FROM " . DASHBOARD_AVA_TABLE . " WHERE;";
+
+        $response = [
+            'result' => $result
+        ];
+        
+        $this->db->flush();
+
+        return json_encode($response);
     }
 }

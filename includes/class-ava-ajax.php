@@ -5,7 +5,7 @@
  * 
  * @package     Dashboard-Ava
  */
-class MYS_Ajax
+class AVA_Ajax
 {
     
     /**
@@ -14,74 +14,78 @@ class MYS_Ajax
     private $crud_db;
 
     /**
-     * 
+     * Constructor del Ajax
      */
     public function __construct()
     {
 
-        $this->crud_db = new MYS_CRUD_DB();
+        $this->crud_db = new AVA_CRUD_DB();
         
     }
 
-    public function mail_asesor_mys()
+    /**
+     * Funcion para editar valor de un indicador
+     */
+    public function edit_value_kpi()
     {
-        $message = "<h1>";
-        $message .= "Este es un ejemplo del contenido de del mensaje de la funcion wp_mail() de WordPress";
-        $message .= "</h1>";
-
-        $headers[]= "From: Info MOTOS Y SERVITECAS <info@motosyservitecas.com.co>";
-
-        $to = "administrativa@motosyservitecas.com.co";
-
-        wp_mail( $to, "Tienes un contacto nuevo de un cliente", $message, $headers );
-
-        function tipo_de_contenido_html() {
-            return 'text/html';
-        }
-
-        add_filter( 'wp_mail_content_type', 'tipo_de_contenido_html' );
-    }
-
-    public function post_contacto_clientes_productos()
-    {
-
-        check_ajax_referer('mys_token','token');
+        check_ajax_referer('ava_token','token');
 
         if ( isset( $_POST['action'] ) ){
 
-            $nombre = $_POST['nombre'];
-            $telefono = $_POST['telefono'];
-            $correo = $_POST['correo'];
-            $sku = $_POST['sku_product'];
+            $id_kpi = $_POST['id_kpi'];
+            $year_kpi = $_POST['year_kpi'];
+            $per_kpi = $_POST['per_kpi'];
+            $value_kpi = $_POST['value_kpi'];
 
-            $result = $this->crud_db->add_cliente($nombre, $telefono, $correo, $sku);
+            $result = $this->crud_db->edit_value_kpi($id_kpi, $year_kpi, $per_kpi, $value_kpi);
 
-            $this->mail_asesor_mys();
-
-            echo $result;
+            error_log($result);
 
             wp_die();
-
         }
-
     }
 
-    public function post_conctacto_delete_cliente()
+    /**
+     * Funcion para agregar valor de un indicador
+     */
+    public function add_value_kpi()
     {
-        
-        check_ajax_referer('mys_token','token');
+        check_ajax_referer('ava_token','token');
 
         if ( isset( $_POST['action'] ) ){
 
-            $id_registro = $_POST['id_registro'];
+            $id_kpi = $_POST['id_kpi'];
+            $year_kpi = $_POST['year_kpi'];
+            $per_kpi = $_POST['per_kpi'];
+            $value_kpi = $_POST['value_kpi'];
 
-            $result = $this->crud_db->delete_cliente($id_registro);
-            
-            echo $result;
-    
+            $result = $this->crud_db->add_value_kpi($id_kpi, $year_kpi, $per_kpi, $value_kpi);
+
+            error_log($result);
+
             wp_die();
-            
-        }     
+        }
+    }
+
+    /**
+     * Funcion para eliminar valor de un indicador
+     */
+    public function delete_value_kpi()
+    {
+        check_ajax_referer('ava_token','token');
+
+        if ( isset( $_POST['action'] ) ){
+
+            $id_kpi = $_POST['id_kpi'];
+            $year_kpi = $_POST['year_kpi'];
+            $per_kpi = $_POST['per_kpi'];
+
+            $result = $this->crud_db->delete_value_kpi($id_kpi, $year_kpi, $per_kpi);
+
+            error_log($result);
+
+            wp_die();
+        }
     }
 }
 

@@ -1,3 +1,19 @@
-body{
-    background-color: aqua;
+.show-kpi{
+    display: none;
+}
+
+div.ava-dashboard{
+    padding-top: 20px;
+}
+
+th.column-id-kpi-value, th.column-id-kpi, th.column-year-kpi, th.column-month-kpi, th.column-value-kpi, th.column-button-kpi{
+    width: 10%;
+}
+
+th.column-key-kpi, th.column-name-kpi{
+    width: 15%;
+}
+
+th.column-comment-kpi{
+    width: 60%;
 }

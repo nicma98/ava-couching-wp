@@ -36,7 +36,7 @@ class AVA_Ajax
 
             $result = $this->crud_db->get_kpi($id_kpi);
 
-            error_log($result);
+            echo json_encode(["data"=>$result]);
 
             wp_die();
         }
@@ -98,6 +98,66 @@ class AVA_Ajax
             $result = $this->crud_db->delete_value_kpi($id_kpi);
 
             error_log($result);
+
+            wp_die();
+        }
+    }
+
+    /**
+     * Funcion para obtener valores de un indicador
+     */
+    public function get_kpi_values()
+    {
+        check_ajax_referer('ava_token','token');
+
+        if ( isset( $_POST['action'] ) ){
+
+            $id_kpi = $_POST['id_kpi'];
+
+            $result = $this->crud_db->get_kpi_values($id_kpi);
+
+            echo json_encode(["data"=>$result]);
+
+            wp_die();
+        }
+    }
+
+    /**
+     * Funcion para agregar un indicador
+     */
+    public function set_kpi_value()
+    {
+        check_ajax_referer('ava_token','token');
+
+        if ( isset( $_POST['action'] ) ){
+
+            $id_kpi = $_POST['id_kpi'];
+            $year = $_POST['year_value'];
+            $month = $_POST['per_value'];
+            $value = $_POST['value'];
+
+            $result = $this->crud_db->set_kpi_value($id_kpi, $year, $month, $value);
+
+            echo json_encode(["data"=>$result]);
+
+            wp_die();
+        }
+    }
+
+    /**
+     * Funcion para eliminar un indicador
+     */
+    public function delete_kpi_value()
+    {
+        check_ajax_referer('ava_token','token');
+
+        if ( isset( $_POST['action'] ) ){
+
+            $id_kpi = $_POST['id_kpi'];
+
+            $result = $this->crud_db->delete_kpi_value($id_kpi);
+
+            echo json_encode(["data"=>$result]);
 
             wp_die();
         }

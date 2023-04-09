@@ -36,6 +36,18 @@ class AVA_CRUD_DB
     }
 
     /**
+     * Funcion para obtener un solo indicador
+     */
+    public function get_kpi($id)
+    {
+
+        $sql = "SELECT * FROM " . DASHBOARD_AVA_TABLE . " WHERE id=" . $id . ";";
+
+        return $this->db->get_results($sql);
+
+    }
+
+    /**
      * Funcion para agregar valor a un indicador.
      */
     public function add_value_kpi($id, $year, $per, $value)
@@ -52,33 +64,51 @@ class AVA_CRUD_DB
     }
 
     /**
-     * Funcion para editar valor de un indicador.
+     * Funcion para eliminar valor de un indicador.
      */
-    public function edit_value_kpi($id, $value)
+    public function delete_kpi_value($id)
     {
-        $result = "UPDATE " . DASHBOARD_AVA_TABLE_VALUES . "SET value=".$value." WHERE id=".$id.";";
+        $query = "DELETE FROM " . DASHBOARD_AVA_TABLE_VALUES . " WHERE id=".$id.";";
+
+        $result = $this->db->query($query);
 
         $response = [
             'result' => $result
         ];
-        
-        $this->db->flush();
 
         return json_encode($response);
     }
 
     /**
-     * Funcion para eliminar valor de un indicador.
+     * Funcion para obtener valores de un indicador especifico
      */
-    public function delete_value_kpi($id)
+    public function get_kpi_values($id)
     {
-        $response = "DELETE FROM " . DASHBOARD_AVA_TABLE_VALUES . " WHERE id=".$id.";";
+
+        $sql = "SELECT * FROM " . DASHBOARD_AVA_TABLE_VALUES . " WHERE id_kpi=" . $id . ";";
+
+        return $this->db->get_results($sql);
+
+    }
+
+    /**
+     * Funcion para agregar valor a un indicador
+     */
+    public function set_kpi_value($id_kpi, $year, $month, $value)
+    {
+        
+        $query =   "INSERT INTO " . DASHBOARD_AVA_TABLE_VALUES;
+        $query .=  " (id_kpi,year_value,per_value,value) VALUES (";
+        $query .=  $id_kpi;
+        $query .=  ",'" . $year . "','";
+        $query .=  $month . "',";
+        $query .=  $value . ");";
+
+        $result = $this->db->query($query);
 
         $response = [
             'result' => $result
         ];
-        
-        $this->db->flush();
 
         return json_encode($response);
     }

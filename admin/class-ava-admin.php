@@ -69,7 +69,7 @@ class AVA_Admin {
     }
 
     /**
-     * Funcion para registrar menu principal
+     * Funcion para registrar menu principal de formulario de indicador nuevo
      */
     public function add_menu()
     {
@@ -87,7 +87,7 @@ class AVA_Admin {
     }
 
     /**
-     * Funcion para usar vista de menu principal
+     * Funcion para usar vista de menu principal de formulario de indicador nuevo
      */
     public function control_display_menu()
     {
@@ -95,7 +95,7 @@ class AVA_Admin {
     }
 
     /**
-     * Funcion para el sub menu de contacto clientes
+     * Funcion para el sub menu del listado de indicadores
      */
     public function add_submenu_contacto_clientes()
     {
@@ -112,7 +112,7 @@ class AVA_Admin {
     }
 
     /**
-     * 
+     * Funcion para moestrar la vista del listrado de indicadores
      */
     public function control_display_submenu_listado_kpis()
     {
@@ -120,11 +120,19 @@ class AVA_Admin {
     }
 
     /**
-     * 
+     * Funcion para obtener listado de indicadores
      */
     public function get_list_kpis()
     {
         return $this->crud_db->get_list_kpis();
+    }
+
+    /**
+     * Funcion para obtener valores de un indicador
+     */
+    public function get_list_values($id)
+    {
+        return $this->crud_db->get_list_values($id);
     }
     
 }

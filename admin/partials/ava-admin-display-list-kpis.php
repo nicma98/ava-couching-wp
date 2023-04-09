@@ -8,7 +8,7 @@
                 <th scope="col" id="id-kpi" class="manage-column column-id-kpi column-primary sortable desc"><a href="#"><span>ID</span><span class="sorting-indicator"></span></a></th>
                 <th scope="col" id="key-kpi" class="manage-column column-key-kpi sortable desc"><a href="#"><span>Clave Indicador</span><span class="sorting-indicator"></span></a></th>
                 <th scope="col" id="name-kpi" class="manage-column column-name-kpi sortable desc"><a href="#"><span>Nombre</span><span class="sorting-indicator"></span></a></th>
-                <th scope="col" id="comment-kpi" class="manage-column column-comment-kpi sortable desc"><a href="#"><span>Comnetario</span><span class="sorting-indicator"></span></a></th>
+                <th scope="col" id="comment-kpi" class="manage-column column-comment-kpi sortable desc"><a href="#"><span>Comentario</span><span class="sorting-indicator"></span></a></th>
             </tr>
         </thead>
 
@@ -62,7 +62,7 @@
                 <th scope="col" id="id-kpi" class="manage-column column-id-kpi column-primary sortable desc"><a href="#"><span>ID</span><span class="sorting-indicator"></span></a></th>
                 <th scope="col" id="key-kpi" class="manage-column column-key-kpi sortable desc"><a href="#"><span>Clave Indicador</span><span class="sorting-indicator"></span></a></th>
                 <th scope="col" id="name-kpi" class="manage-column column-name-kpi sortable desc"><a href="#"><span>Nombre</span><span class="sorting-indicator"></span></a></th>
-                <th scope="col" id="comment-kpi" class="manage-column column-comment-kpi sortable desc"><a href="#"><span>Comnetario</span><span class="sorting-indicator"></span></a></th>
+                <th scope="col" id="comment-kpi" class="manage-column column-comment-kpi sortable desc"><a href="#"><span>Comentario</span><span class="sorting-indicator"></span></a></th>
             </tr>
         </tfoot>
 

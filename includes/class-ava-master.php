@@ -93,6 +93,9 @@ class AVA_Master
         $this->class_cargador->add_list_action( 'admin_menu', $this->class_admin, 'add_menu' );
         $this->class_cargador->add_list_action( 'admin_menu', $this->class_admin, 'add_submenu_contacto_clientes' );
         $this->class_cargador->add_list_action( 'wp_ajax_get_kpi', $this->class_ajax, 'get_kpi');
+        $this->class_cargador->add_list_action( 'wp_ajax_get_kpi_values', $this->class_ajax, 'get_kpi_values');
+        $this->class_cargador->add_list_action( 'wp_ajax_set_kpi_value', $this->class_ajax, 'set_kpi_value');
+        $this->class_cargador->add_list_action( 'wp_ajax_delete_kpi_value', $this->class_ajax, 'delete_kpi_value');
     }
 
     /**

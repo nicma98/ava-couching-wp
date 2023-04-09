@@ -29,9 +29,9 @@ class AVA_Activator
 		$sql_2 = "CREATE TABLE IF NOT EXISTS " . DASHBOARD_AVA_TABLE_VALUES . " (
 			id int(11) NOT NULL AUTO_INCREMENT,
 			id_kpi int(11) NOT NULL,
-			year_value int(4) NOT NULL,
-			per_value int(2) NOT NULL,
-			value int(11) NOT NULL,
+			year_value char(4) NOT NULL,
+			per_value char(2) NOT NULL,
+			value float(11,2) NOT NULL,
 		 	PRIMARY KEY (id) 
 		);";
 
